@@ -1,0 +1,294 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="css.css">
+
+    <meta charset="utf-8">
+    <title>CSS Transition Test</title>
+    <h1> Tic-tac-toe sample </h1>
+  </head>
+</body>
+
+<div class = "box">
+<div id="box1" class="boxes" name="buttonClicked">
+</div>
+
+<div id="box2" class="boxes" name="buttonClicked" value=3>
+</div>
+
+<div id="box3" class="boxes" name="buttonClicked" value=4>
+</div>
+
+<div id="box4" class="boxes" name="buttonClicked" value=1>
+</div>
+
+<div id="box5" class="boxes" name="buttonClicked" value=5>
+</div>
+
+<div id="box6" class="boxes" name="buttonClicked" value=9>
+</div>
+
+<div id="box7" class="boxes" name="buttonClicked" value=6>
+</div>
+
+<div id="box8" class="boxes" name="buttonClicked" value=7>
+</div>
+
+<div id="box9" class="boxes" name="buttonClicked" value=2>
+</div>
+</class>
+
+<script>
+//GLOBAL VARS HERE
+var previousMove = "O"
+var box = ""
+
+document.getElementById('box1').addEventListener("click",moves)
+document.getElementById('box2').addEventListener("click",moves)
+document.getElementById('box3').addEventListener("click",moves)
+document.getElementById('box4').addEventListener("click",moves)
+document.getElementById('box5').addEventListener("click",moves)
+document.getElementById('box6').addEventListener("click",moves)
+document.getElementById('box7').addEventListener("click",moves)
+document.getElementById('box8').addEventListener("click",moves)
+document.getElementById('box9').addEventListener("click",moves)
+
+document.getElementById("box1").onclick = function() {
+  var htmlstring = document.getElementById("box1").innerHTML
+  htmlstring = (htmlstring.trim) ? htmlstring.trim() : htmlstring.replace(/^\s+/,'');
+
+  if (previousMove === "O" && htmlstring === "") {
+  document.getElementById("box1").innerHTML = "X"
+  previousMove = "X"
+} else if (previousMove === "X" && htmlstring === "") {
+  document.getElementById("box1").innerHTML = "O"
+  previousMove = "O"
+}
+ checkForGameOver()
+ }
+
+document.getElementById("box2").onclick = function() {
+  var htmlstring = document.getElementById("box2").innerHTML
+  htmlstring = (htmlstring.trim) ? htmlstring.trim() : htmlstring.replace(/^\s+/,'');
+
+  if (previousMove === "O" && htmlstring === "") {
+  document.getElementById("box2").innerHTML = "X"
+  previousMove = "X"
+} else if (previousMove === "X" && htmlstring === "") {
+  var a = document.getElementById("box2").innerHTML = "O"
+  previousMove = "O"
+}
+ checkForGameOver()
+}
+
+document.getElementById("box3").onclick = function() {
+  var htmlstring = document.getElementById("box3").innerHTML
+  htmlstring = (htmlstring.trim) ? htmlstring.trim() : htmlstring.replace(/^\s+/,'');
+
+  if (previousMove === "O" && htmlstring === "") {
+  document.getElementById("box3").innerHTML = "X"
+  previousMove = "X"
+} else if (previousMove === "X" && htmlstring === "") {
+    var a = document.getElementById("box3").innerHTML = "O"
+    previousMove = "O"
+  }
+   checkForGameOver()
+  }
+
+    document.getElementById("box4").onclick = function() {
+      var htmlstring = document.getElementById("box4").innerHTML
+      htmlstring = (htmlstring.trim) ? htmlstring.trim() : htmlstring.replace(/^\s+/,'');
+
+      if (previousMove === "O" && htmlstring === "") {
+      document.getElementById("box4").innerHTML = "X"
+      previousMove = "X"
+    } else if (previousMove === "X" && htmlstring === "") {
+      var a = document.getElementById("box4").innerHTML = "O"
+      previousMove = "O"
+    }
+     checkForGameOver()
+    }
+
+      document.getElementById("box5").onclick = function() {
+        var htmlstring = document.getElementById("box5").innerHTML
+        htmlstring = (htmlstring.trim) ? htmlstring.trim() : htmlstring.replace(/^\s+/,'');
+        if (previousMove === "O" && htmlstring === "") {
+        document.getElementById("box5").innerHTML = "X"
+        previousMove = "X"
+      } else if (previousMove === "X" && htmlstring === "") {
+        var a = document.getElementById("box5").innerHTML = "O"
+        previousMove = "O"
+      }
+       checkForGameOver()
+      }
+
+        document.getElementById("box6").onclick = function() {
+          var htmlstring = document.getElementById("box6").innerHTML
+          htmlstring = (htmlstring.trim) ? htmlstring.trim() : htmlstring.replace(/^\s+/,'');
+          if (previousMove === "O" && htmlstring === "") {
+          document.getElementById("box6").innerHTML = "X"
+          previousMove = "X"
+        } else if (previousMove === "X" && htmlstring === "") {
+          var a = document.getElementById("box6").innerHTML = "O"
+          previousMove = "O"
+        }
+         checkForGameOver()
+        }
+
+          document.getElementById("box7").onclick = function() {
+            var htmlstring = document.getElementById("box7").innerHTML
+            htmlstring = (htmlstring.trim) ? htmlstring.trim() : htmlstring.replace(/^\s+/,'');
+            if (previousMove === "O" && htmlstring === "") {
+            document.getElementById("box7").innerHTML = "X"
+            previousMove = "X"
+          } else if (previousMove === "X" && htmlstring === "") {
+            var a = document.getElementById("box7").innerHTML = "O"
+            previousMove = "O"
+          }
+           checkForGameOver()
+          }
+
+            document.getElementById("box8").onclick = function() {
+              var htmlstring = document.getElementById("box8").innerHTML
+              htmlstring = (htmlstring.trim) ? htmlstring.trim() : htmlstring.replace(/^\s+/,'');
+
+              if (previousMove === "O" && htmlstring === "") {
+              document.getElementById("box8").innerHTML = "X"
+              previousMove = "X"
+            } else if (previousMove === "X" && htmlstring === "") {
+              var a = document.getElementById("box8").innerHTML = "O"
+              previousMove = "O"
+            }
+             checkForGameOver()
+            }
+
+              document.getElementById("box9").onclick = function() {
+                var htmlstring = document.getElementById("box9").innerHTML
+                htmlstring = (htmlstring.trim) ? htmlstring.trim() : htmlstring.replace(/^\s+/,'');
+
+                if (previousMove === "O" && htmlstring === "") {
+                document.getElementById("box9").innerHTML = "X"
+                previousMove = "X"
+              } else if (previousMove === "X" && htmlstring === "") {
+                var a = document.getElementById("box9").innerHTML = "O"
+                previousMove = "O"
+              }
+              checkForGameOver()
+              }
+
+
+function moves() {
+}
+
+function checkForGameOver() {
+  //if 1,2, & 3 are filled with either X or O, calculate if it adds up to 15
+  var a11 = document.getElementById("box1").innerHTML
+  var a22 = document.getElementById("box2").innerHTML
+  var a33 = document.getElementById("box3").innerHTML
+  var a44 = document.getElementById("box4").innerHTML
+  var a55 = document.getElementById("box5").innerHTML
+  var a66 = document.getElementById("box6").innerHTML
+  var a77 = document.getElementById("box7").innerHTML
+  var a88 = document.getElementById("box8").innerHTML
+  var a99 = document.getElementById("box9").innerHTML
+
+//a11,a22,a33
+   if (a11 === "X" && a22 === "X" && a33 === "X") {
+    alert ("Player 1 Won!")
+    restartGame()
+  }
+  if (a11 === "O" && a22 === "O" && a33 === "O") {
+    alert ("Player 2 Won!")
+    restartGame()
+  }
+
+  //a44,a55,a66
+  if (a44 === "X" && a55 === "X" && a66 === "X") {
+    alert ("Player 1 Won!")
+    restartGame()
+  }
+  if (a44 === "O" && a55 === "O" && a66 === "O") {
+    alert ("Player 2 Won!")
+    restartGame()
+  }
+
+ //a77,a88,a99
+  if (a77 === "X" && a88 === "X" && a99 === "X") {
+    alert ("Player 1 Won!")
+    restartGame()
+  }
+  if (a77 === "O" && a88 === "O" && a99 === "O") {
+    alert ("Player 2 Won!")
+    restartGame()
+  }
+
+  //a11,a44,a77
+  if (a11 === "X" && a44 === "X" && a77 === "X") {
+    alert ("Player 1 Won!")
+    restartGame()
+  }
+  if (a11 === "O" && a44 === "O" && a77 === "O") {
+    alert ("Player 2 Won!")
+    restartGame()
+  }
+
+//a22,a55,a88
+  if (a22 === "X" && a55 === "X" && a88 === "X") {
+    alert ("Player 1 Won!")
+    restartGame()
+  }
+  if (a44 === "O" && a55 === "O" && a66 === "O") {
+    alert ("Player 2 Won!")
+    restartGame()
+  }
+//a33,a66,a99
+if (a33 === "X" && a66 === "X" && a99 === "X") {
+  alert ("Player 1 Won!")
+  restartGame()
+}
+if (a33 === "O" && a66 === "O" && a99 === "O") {
+  alert ("Player 2 Won!")
+  restartGame()
+}
+
+  //a11 && a55 && a99
+  if (a11 === "X" && a55 === "X" && a99 === "X") {
+    alert ("Player 1 Won!")
+    restartGame()
+  }
+  if (a11 === "O" && a55 === "O" && a99 === "O") {
+    alert ("Player 2 Won!")
+    restartGame()
+  }
+  //a33 && a55 && a77
+  if (a33 === "X" && a55 === "X" && a77 === "X") {
+    alert ("Player 1 Won!")
+    restartGame()
+  }
+  if (a33 === "O" && a55 === "O" && a77 === "O") {
+    alert ("Player 2 Won!")
+    restartGame()
+  }
+}
+
+function restartGame() {
+  document.getElementById("box1").innerHTML = ""
+  document.getElementById("box2").innerHTML = ""
+  document.getElementById("box3").innerHTML = ""
+  document.getElementById("box4").innerHTML = ""
+  document.getElementById("box5").innerHTML = ""
+  document.getElementById("box6").innerHTML = ""
+  document.getElementById("box7").innerHTML = ""
+  document.getElementById("box8").innerHTML = ""
+  document.getElementById("box9").innerHTML = ""
+}
+
+</script>
+
+<script src = "script.js" charset="utf8"> </script>
+<script src = "testing-the-tester.js" charset="utf8"> </script>
+<script src="tic-tac-tester.js" charset="utf-8"></script>
+
+  </body>
+</html>
